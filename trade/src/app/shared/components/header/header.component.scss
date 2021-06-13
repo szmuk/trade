@@ -25,10 +25,12 @@ ion-header::after {
     font-size: 25px;
     font-weight: 500;
   }
+
   &__search {
     --box-shadow: none;
     --background: var(--x-bg-lightgray);
     max-width: 450px;
+    flex-shrink: 1;
   }
 
   &__actions {
@@ -36,15 +38,26 @@ ion-header::after {
     flex-direction: row;
     align-items: center;
     color: var(--x-text-darkgray);
+    flex-shrink: 0;
 
     &__icon {
       font-size: 25px;
       margin-left: 15px;
       cursor: pointer;
+      flex-shrink: 0;
 
       &:hover {
         opacity: 0.6;
       }
+    }
+
+    &__avatar {
+      flex-shrink: 0;
+      height: 50px;
+      width: 50px;
+      border-radius: 30px;
+      margin-left: 20px;
+      cursor: pointer;
     }
   }
 }

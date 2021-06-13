@@ -1,4 +1,9 @@
 .menu {
+  &__logo {
+    height: 55px;
+    margin: 13px 0 10px 7px;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
