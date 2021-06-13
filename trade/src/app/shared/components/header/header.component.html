@@ -1,0 +1,24 @@
+<ion-header no-border [translucent]="true" class="header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <div class="header__container">
+
+      <ion-title class="header__title">{{title}}</ion-title>
+
+      <ion-searchbar class="header__search" placeholder="Search for ticker, user or other information"></ion-searchbar>
+
+      <div class="header__actions">
+        <ion-button>
+          <ion-icon slot="start" name="add"></ion-icon>
+          Invite a friend
+        </ion-button>
+        <ion-icon name="notifications" class="header__actions__icon"></ion-icon>
+        <ion-icon name="help-circle" class="header__actions__icon"></ion-icon>
+        <ion-icon name="cog" class="header__actions__icon"></ion-icon>
+      </div>
+
+    </div>
+  </ion-toolbar>
+</ion-header>
