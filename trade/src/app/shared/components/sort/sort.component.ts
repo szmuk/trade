@@ -26,8 +26,10 @@ export class SortComponent {
     });
 
     popover.onDidDismiss().then(response => {
-      this.value = response.data;
-      this.valueChange.emit(this.value);
+      if (response?.data) {
+        this.value = response.data;
+        this.valueChange.emit(this.value);
+      }
     });
 
     await popover.present();
