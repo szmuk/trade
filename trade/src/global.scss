@@ -37,15 +37,10 @@ ion-button {
   --padding-end: 30px;
 }
 
-@media only screen and (max-width: 575px) {
-  .hidden-xs-down {
-    display: none !important;
-  }
-}
-
-@media only screen and (min-width: 576px) {
-  .hidden-xs-up {
-    display: none !important;
+@media (min-width: 767px) {
+  .modal-very-big .modal-wrapper {
+    width: 1200px;
+    height: 90%;
   }
 }
 

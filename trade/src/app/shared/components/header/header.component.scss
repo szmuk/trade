@@ -6,6 +6,15 @@ ion-header::after {
 .header {
   padding: 0 30px;
 
+  @media (max-width: 767px) {
+    padding: 0 10px;
+  }
+
+  &__mobile-menu {
+    height: 60px;
+    width: 60px;
+  }
+
   &::after {
     background-image: none;
     border-bottom: 1px solid var(--x-bg-gray);
