@@ -199,3 +199,24 @@
     }
   }
 }
+
+.alert-details {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+
+  &__description {
+    &__title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__graph {
+    border: 1px solid var(--x-bg-gray);
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 5px;
+  }
+}
