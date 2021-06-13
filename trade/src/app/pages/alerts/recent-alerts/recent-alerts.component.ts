@@ -3,7 +3,7 @@ import { filter } from 'rxjs/operators';
 import { Alert } from 'src/app/core/models/alert';
 import { AlertsQuery } from 'src/app/core/state/alerts/alerts.query';
 import { AlertsService } from 'src/app/core/state/alerts/alerts.service';
-import { SortComponentOption } from 'src/app/shared/components/sort/sort.component';
+import { SortFilterComponentOption } from 'src/app/shared/components/sort-filter/sort-filter.component';
 
 @Component({
   selector: 'app-recent-alerts',
@@ -14,9 +14,9 @@ export class RecentAlertsComponent implements OnInit {
 
   alertsList: Alert[];
 
-  selectedSortOption: SortComponentOption;
+  selectedSortOption: SortFilterComponentOption;
 
-  sortOptions: SortComponentOption[] = [
+  sortOptions: SortFilterComponentOption[] = [
     {
       key: 'all',
       value: 'All'
@@ -31,9 +31,9 @@ export class RecentAlertsComponent implements OnInit {
     },
   ];
 
-  selectedFilterOption: SortComponentOption;
+  selectedFilterOption: SortFilterComponentOption;
 
-  filterOptions: SortComponentOption[] = [
+  filterOptions: SortFilterComponentOption[] = [
     {
       key: 'all',
       value: 'All'

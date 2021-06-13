@@ -4,7 +4,7 @@ import { filter } from 'rxjs/operators';
 import { Trending } from 'src/app/core/models/trending';
 import { TrendingQuery } from 'src/app/core/state/trending/trending.query';
 import { TrendingService } from 'src/app/core/state/trending/trending.service';
-import { SortComponentOption } from 'src/app/shared/components/sort/sort.component';
+import { SortFilterComponentOption } from 'src/app/shared/components/sort-filter/sort-filter.component';
 
 @Component({
   selector: 'app-trending-tickers',
@@ -16,9 +16,9 @@ export class TrendingTickersComponent implements OnInit {
   trendingList: Trending[];
   filteredTrendingList: Trending[];
 
-  selectedSortOption: SortComponentOption;
+  selectedSortOption: SortFilterComponentOption;
 
-  sortOptions: SortComponentOption[] = [
+  sortOptions: SortFilterComponentOption[] = [
     {
       key: 'today',
       value: 'Today'

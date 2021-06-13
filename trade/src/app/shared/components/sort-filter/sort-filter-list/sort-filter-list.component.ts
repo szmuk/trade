@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 import { NavParams, PopoverController } from '@ionic/angular';
-import { SortComponentOption } from '../sort.component';
+import { SortFilterComponentOption } from '../sort-filter.component';
 
 @Component({
-  selector: 'app-sort-list',
-  templateUrl: './sort-list.component.html',
-  styleUrls: ['./sort-list.component.scss'],
+  templateUrl: './sort-filter-list.component.html',
+  styleUrls: ['./sort-filter-list.component.scss'],
 })
-export class SortListComponent {
+export class SortFilterListComponent {
 
-  options: SortComponentOption[];
-  selected: SortComponentOption;
+  options: SortFilterComponentOption[];
+  selected: SortFilterComponentOption;
 
   constructor(public navParams: NavParams, public popoverController: PopoverController) {
     this.options = this.navParams.data.options;

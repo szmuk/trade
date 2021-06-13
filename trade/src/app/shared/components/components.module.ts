@@ -6,25 +6,25 @@ import { IonicModule } from '@ionic/angular';
 import { FilterComponent } from './filter/filter.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
-import { SortListComponent } from './sort/sort-list/sort-list.component';
-import { SortComponent } from './sort/sort.component';
+import { SortFilterListComponent } from './sort-filter/sort-filter-list/sort-filter-list.component';
+import { SortFilterComponent } from './sort-filter/sort-filter.component';
 
 @NgModule({
   declarations: [
-    SortComponent,
+    SortFilterComponent,
     MenuComponent,
     HeaderComponent,
-    SortListComponent,
+    SortFilterListComponent,
     FilterComponent,
   ],
   exports: [
-    SortComponent,
+    SortFilterComponent,
     MenuComponent,
     HeaderComponent,
     FilterComponent,
   ],
   entryComponents: [
-    SortListComponent
+    SortFilterListComponent
   ],
   imports: [
     CommonModule,

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SortListComponent } from './sort-list.component';
+import { SortFilterComponent } from './sort-filter.component';
 
-describe('SortListComponent', () => {
-  let component: SortListComponent;
-  let fixture: ComponentFixture<SortListComponent>;
+describe('SortFilterComponent', () => {
+  let component: SortFilterComponent;
+  let fixture: ComponentFixture<SortFilterComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SortListComponent ],
+      declarations: [SortFilterComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SortListComponent);
+    fixture = TestBed.createComponent(SortFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

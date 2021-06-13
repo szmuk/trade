@@ -1,26 +1,26 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
-import { SortListComponent } from './sort-list/sort-list.component';
+import { SortFilterListComponent } from './sort-filter-list/sort-filter-list.component';
 
 @Component({
   selector: 'app-sort',
-  templateUrl: './sort.component.html',
-  styleUrls: ['./sort.component.scss'],
+  templateUrl: './sort-filter.component.html',
+  styleUrls: ['./sort-filter.component.scss'],
 })
-export class SortComponent {
+export class SortFilterComponent {
   @Input() label: string;
 
-  @Input() options: SortComponentOption[];
+  @Input() options: SortFilterComponentOption[];
   @Input() placeholder: string;
 
-  @Input() value: SortComponentOption;
-  @Output() valueChange = new EventEmitter<SortComponentOption>();
+  @Input() value: SortFilterComponentOption;
+  @Output() valueChange = new EventEmitter<SortFilterComponentOption>();
 
   constructor(public popoverController: PopoverController) { }
 
   async openOptions(ev) {
     const popover = await this.popoverController.create({
-      component: SortListComponent,
+      component: SortFilterListComponent,
       event: ev,
       translucent: true,
       componentProps: { options: this.options, selected: this.value }
@@ -38,7 +38,7 @@ export class SortComponent {
 
 }
 
-export class SortComponentOption {
+export class SortFilterComponentOption {
   key: string;
   value: string;
 }
