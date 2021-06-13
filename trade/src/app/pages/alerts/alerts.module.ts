@@ -17,7 +17,9 @@ import { TrendingTileComponent } from './trending-tickers/trending-tile/trending
     TrendingTileComponent,
     RecentAlertsComponent,
     AlertsPage,
-    AlertsTableComponent
+    AlertsTableComponent,
+  ],
+  entryComponents: [
   ]
 })
 export class AlertsPageModule { }

@@ -103,4 +103,5 @@ export class RecentAlertsComponent implements OnInit {
         break;
     }
   }
+
 }

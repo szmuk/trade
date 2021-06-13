@@ -1,7 +1,8 @@
 <div class="table">
 
   <ion-grid style="--ion-grid-padding: 5px;">
-    <ion-row *ngFor="let alert of alerts" class="table__row" [class.table__row--closed]="alert.closed">
+    <ion-row *ngFor="let alert of alerts" class="table__row" [class.table__row--closed]="alert.closed"
+      (click)="openAlert(alert)">
 
       <!-- AVATAR, NAME -->
       <ion-col size="6" size-md="4" size-lg="2">

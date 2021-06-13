@@ -41,6 +41,8 @@ ion-button {
   .modal-very-big .modal-wrapper {
     width: 1200px;
     height: 90%;
+    --background: transparent;
+    --box-shadow: none;
   }
 }
 

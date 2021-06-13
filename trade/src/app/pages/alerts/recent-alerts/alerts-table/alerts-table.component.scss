@@ -8,6 +8,7 @@
     background-color: white;
     border-radius: 15px;
     margin: 10px 0;
+    cursor: pointer;
 
     &--closed {
       background-color: var(--x-bg-gray);
@@ -183,8 +184,9 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-right: 13px;
+      padding-right: 13px;
       cursor: pointer;
+      height: 100%;
 
       &--toggled {
         color: var(--x-action);

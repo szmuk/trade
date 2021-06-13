@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import * as moment from 'moment';
 import { Alert } from 'src/app/core/models/alert';
 import { AlertsService } from 'src/app/core/state/alerts/alerts.service';
+import { AlertModalComponent, AlertModalInput } from 'src/app/shared/components/alert-modal/alert-modal.component';
 
 @Component({
   selector: 'app-alerts-table',
@@ -12,7 +14,7 @@ export class AlertsTableComponent implements OnInit {
 
   @Input() alerts: Alert[];
 
-  constructor(private alertsService: AlertsService) { }
+  constructor(private alertsService: AlertsService, private modalCtrl: ModalController) { }
 
   ngOnInit() {
   }
@@ -36,6 +38,21 @@ export class AlertsTableComponent implements OnInit {
 
   save(alert: Alert) {
     this.alertsService.save(alert);
+  }
 
+  async openAlert(alert: Alert) {
+
+    const data: AlertModalInput = {
+      alert
+    };
+
+    const previewModal = await this.modalCtrl.create({
+      component: AlertModalComponent,
+      cssClass: 'modal-very-big',
+      componentProps: data,
+      backdropDismiss: true,
+    });
+
+    await previewModal.present();
   }
 }

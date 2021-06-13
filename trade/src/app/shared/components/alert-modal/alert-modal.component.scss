@@ -1,0 +1,19 @@
+.close {
+  --background: transparent;
+
+  &__container {
+    display: flex;
+    flex-direction: row-reverse;
+
+    &__close {
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      color: white;
+
+      font-size: 30px;
+      background: rgb(110, 110, 110);
+      border-radius: 5px 5px 0 0;
+    }
+  }
+}
