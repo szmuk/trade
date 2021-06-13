@@ -4,7 +4,7 @@ ion-header::after {
 }
 
 .header {
-  padding: 0 10px;
+  padding: 0 15px;
 
   &::after {
     background-image: none;
@@ -22,6 +22,8 @@ ion-header::after {
 
   &__title {
     flex-grow: 0;
+    font-size: 22px;
+    font-weight: 500;
   }
   &__search {
     --box-shadow: none;

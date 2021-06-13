@@ -8,6 +8,7 @@
 
     &__item {
       --background: transparent;
+      color: white;
 
       &.selected {
         --background: rgba(var(--ion-color-primary-rgb), 0.14);
