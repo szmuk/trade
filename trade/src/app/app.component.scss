@@ -1,3 +1,6 @@
 .side-menu {
-  max-width: 150px;
+  // max-width: 150px;
+  ion-content {
+    --background: var(--x-background);
+  }
 }

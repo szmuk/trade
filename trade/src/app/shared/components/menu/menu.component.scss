@@ -1,6 +1,24 @@
-ion-item.selected {
-  --background: rgba(var(--ion-color-primary-rgb), 0.14);
+.menu {
+  &__logo {
+    max-height: 55px;
+  }
+
+  &__list {
+    background-color: transparent;
+
+    &__item {
+      --background: transparent;
+
+      &.selected {
+        --background: rgba(var(--ion-color-primary-rgb), 0.14);
+      }
+    }
+  }
 }
+
+// ion-item.selected {
+//   --background: rgba(var(--ion-color-primary-rgb), 0.14);
+// }
 
 // ion-menu ion-content {
 //   --background: var(--ion-item-background, var(--ion-background-color, #fff));
