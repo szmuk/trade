@@ -1,0 +1,199 @@
+.table {
+  background-color: var(--x-bg-lightgray);
+  border-radius: 20px;
+  padding: 15px;
+
+  // ROW
+  &__row {
+    background-color: white;
+    border-radius: 15px;
+    margin: 10px 0;
+
+    &--closed {
+      background-color: var(--x-bg-gray);
+    }
+  }
+
+  // PERSON
+  &__person {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+
+    &__info {
+      flex-grow: 1;
+      flex-shrink: 1;
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+
+      &__name {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      &__login {
+        font-size: 13px;
+        color: var(--x-text-light);
+      }
+    }
+    &__avatar {
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 5px;
+      position: relative;
+
+      img {
+        height: 50px;
+        width: 50px;
+        border: 3px solid white;
+        border-radius: 25px;
+        box-shadow: 1px 2px 9px rgba(0, 0, 0, 0.4);
+      }
+      &__alerts {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: var(--x-action);
+        color: white;
+        font-size: 12px;
+        padding: 3px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  // ACTION
+  &__action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+
+    &__company {
+      flex-grow: 0;
+      flex-shrink: 0;
+      height: 50px;
+      width: 50px;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: var(--x-bg-lightgray);
+    }
+
+    &__info {
+      flex-grow: 1;
+      flex-shrink: 1;
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+
+      &__action {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+      &__price {
+        font-size: 13px;
+        color: var(--x-text-light);
+      }
+    }
+  }
+
+  // DATE
+  &__date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+
+    &__container {
+      flex-grow: 1;
+      flex-shrink: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    &__closed {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    &__opened {
+      font-size: 13px;
+      color: var(--x-text-light);
+    }
+  }
+
+  // TYPE
+  &__type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+
+    &__text {
+      flex-grow: 1;
+      flex-shrink: 1;
+      color: var(--x-text-light);
+      font-size: 15px;
+    }
+  }
+
+  // RESULT
+  &__result {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    font-size: 15px;
+
+    &__container {
+      border-radius: 5px;
+      padding: 5px 10px;
+
+      &--made {
+        color: white;
+        background-color: var(--x-success);
+      }
+      &--lost {
+        color: white;
+        background-color: var(--x-fail);
+      }
+      &--up {
+        color: var(--x-success);
+        background-color: var(--x-success-light);
+      }
+      &--down {
+        color: var(--x-fail);
+        background-color: var(--x-fail-light);
+      }
+    }
+  }
+
+  // ACTIONS
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    color: var(--x-text-darkgray);
+
+    &__action {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 13px;
+      cursor: pointer;
+
+      &--toggled {
+        color: var(--x-action);
+      }
+
+      ion-icon {
+        font-size: 20px;
+        margin-right: 7px;
+      }
+    }
+  }
+}

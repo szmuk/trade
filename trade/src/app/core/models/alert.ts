@@ -16,4 +16,6 @@ export class Alert {
   commentsCount: number;
   commented: boolean;
   top: boolean;
+  price: number;
+  currency: string;
 }
