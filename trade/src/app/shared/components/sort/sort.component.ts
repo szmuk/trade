@@ -8,6 +8,7 @@ import { SortListComponent } from './sort-list/sort-list.component';
   styleUrls: ['./sort.component.scss'],
 })
 export class SortComponent {
+  @Input() label: string;
 
   @Input() options: SortComponentOption[];
   @Input() placeholder: string;
