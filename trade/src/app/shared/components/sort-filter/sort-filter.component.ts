@@ -3,12 +3,13 @@ import { PopoverController } from '@ionic/angular';
 import { SortFilterListComponent } from './sort-filter-list/sort-filter-list.component';
 
 @Component({
-  selector: 'app-sort',
+  selector: 'app-sort-filter',
   templateUrl: './sort-filter.component.html',
   styleUrls: ['./sort-filter.component.scss'],
 })
 export class SortFilterComponent {
   @Input() label: string;
+  @Input() display: 'dropdown' | 'bar' = 'dropdown';
 
   @Input() options: SortFilterComponentOption[];
   @Input() placeholder: string;
@@ -28,14 +29,17 @@ export class SortFilterComponent {
 
     popover.onDidDismiss().then(response => {
       if (response?.data) {
-        this.value = response.data;
-        this.valueChange.emit(this.value);
+        this.optionSelected(response.data);
       }
     });
 
     await popover.present();
   }
 
+  optionSelected(option) {
+    this.value = option;
+    this.valueChange.emit(this.value);
+  }
 }
 
 export class SortFilterComponentOption {
