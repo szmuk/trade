@@ -1,6 +1,6 @@
 <div class="table">
 
-  <ion-grid style="--ion-grid-padding: 5px;">
+  <ion-grid>
     <ion-row *ngFor="let alert of alerts" class="table__row" [class.table__row--closed]="alert.closed"
       (click)="openAlert(alert)">
 

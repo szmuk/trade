@@ -5,4 +5,105 @@
     </div>
   </div>
 </ion-header>
-<ion-content>xx</ion-content>
+<div class="content">
+
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size="12" size-md="6" size-lg="4" class="ion-no-padding">
+        <div class="trader">
+
+          <div class="trader__person">
+            <div class="trader__person__avatar">
+              <img [src]="'assets/' + alert.user.imageUrl" />
+              <div class="trader__person__avatar__alerts">{{alert.user.alertsCount}}</div>
+            </div>
+
+            <div class="trader__person__info">
+              <div class="trader__person__info__name">
+                {{alert.user.name}}
+              </div>
+              <div class="trader__person__info__login">
+                @{{alert.user.login}}
+              </div>
+            </div>
+          </div>
+
+          <div class="trader__follow" *ngIf="!alert.user.following">
+            Follow
+          </div>
+          <div class="trader__follow trader__follow--unfollow" *ngIf="alert.user.following">
+            Unfollow
+          </div>
+        </div>
+
+      </ion-col>
+
+      <ion-col size="12" size-md="6" size-lg="8" class="ion-no-padding">
+        <div class="alert">
+          <div class="alert__details">
+
+            <div class="alert__details__company">
+              <img [src]="'assets/' + alert.company.imageUrl" />
+            </div>
+
+            <div class="alert__details__info">
+              <div class="alert__details__info__action">
+                {{alert.closed ? 'Sold' : 'Bought'}} {{alert.company.code}} shares
+              </div>
+              <div class="alert__details__info__price">
+                @ {{alert.currency}}{{alert.price}}
+              </div>
+            </div>
+          </div>
+
+          <div class="alert__date">
+            {{getDate(alert.closed ? alert.closed : alert.opened)}}
+          </div>
+
+          <div class="alert__result">
+            <div class="alert__result alert__result--made" *ngIf="alert.closed && alert.gainLoss > 0">
+              Made {{alert.gainLoss}}%
+            </div>
+            <div class="alert__result alert__result--lost" *ngIf="alert.closed && alert.gainLoss < 0">
+              Lost {{(alert.gainLoss * -1)}}%
+            </div>
+            <div class="alert__result alert__result--up" *ngIf="!alert.closed && alert.gainLoss > 0">
+              Up {{alert.gainLoss}}%
+            </div>
+            <div class="alert__result alert__result--down" *ngIf="!alert.closed && alert.gainLoss < 0">
+              Down {{(alert.gainLoss * -1)}}%
+            </div>
+            <div class="alert__result alert__result--zero" *ngIf="alert.gainLoss === 0">
+              {{alert.gainLoss}}%
+            </div>
+          </div>
+
+
+          <div class="alert__actions">
+            <div class="alert__actions__action" [class.alert__actions__action--toggled]="alert.liked"
+              (click)="like(alert)">
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>{{alert.likesCount}}</div>
+            </div>
+            <div class="alert__actions__action" [class.alert__actions__action--toggled]="alert.saved"
+              (click)="save(alert)">
+              <ion-icon name="bookmark"></ion-icon>
+              <div>{{alert.savedCount}}</div>
+            </div>
+            <div class="alert__actions__action" [class.alert__actions__action--toggled]="alert.commented">
+              <ion-icon name="chatbox"></ion-icon>
+              <div>{{alert.commentsCount}}</div>
+            </div>
+          </div>
+
+          <ion-button>
+            <ion-icon slot="start" name="cash"></ion-icon>
+            Give a tip
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</div>
