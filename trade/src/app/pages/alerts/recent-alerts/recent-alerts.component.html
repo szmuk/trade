@@ -1,3 +1,25 @@
-<p>
-  recent-alerts works!
-</p>
+<div class="alerts">
+  <div class="alerts__title">Recent alerts</div>
+  <div class="alerts__toolbar">
+    <app-filter [options]="filterOptions" [(value)]="selectedFilterOption" (valueChange)="filterChanged()"></app-filter>
+    <app-sort [options]="sortOptions" [(value)]="selectedSortOption" (valueChange)="sortChanged()"></app-sort>
+  </div>
+
+  <!-- <div class="trending__header">
+    <div class="trending__header__title">Trending tickers</div>
+
+    <div class="sort">
+      <app-sort [options]="sortOptions" [(value)]="selectedSortOption" (valueChange)="sortChanged()"></app-sort>
+    </div>
+  </div>
+
+  <div class="trending__content">
+    <div class="trending__content__scrollable">
+
+      <app-trending-tile *ngFor="let trending of filteredTrendingList" [trending]="trending"
+        class="trending__content__item">
+      </app-trending-tile>
+
+    </div>
+  </div> -->
+</div>

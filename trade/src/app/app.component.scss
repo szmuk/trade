@@ -1,6 +1,9 @@
 .side-menu {
-  // max-width: 150px;
   ion-content {
     --background: var(--x-bg-blue);
   }
+}
+
+.split-pane {
+  --side-max-width: 300px;
 }
