@@ -1,0 +1,22 @@
+.sort {
+  background-color: var(--x-bg-gray);
+  cursor: pointer;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__result {
+    color: var(--x-text-light);
+    margin-left: 5px;
+    &--placeholder {
+      min-width: 15px;
+    }
+  }
+
+  &__icon {
+    margin-left: 3px;
+  }
+}

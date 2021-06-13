@@ -11,7 +11,11 @@
 
   --x-darkgray: #b0b7c3;
 
+  --x-text: #435274;
+  --x-text-light: #a1b1c3;
+
   /** primary **/
+  --ion-text-color: var(--x-text);
   --ion-color-primary: #01a5ea;
   --ion-color-primary-rgb: 1, 165, 234;
   --ion-color-primary-contrast: #ffffff;
@@ -207,8 +211,7 @@
     --ion-background-color: #121212;
     --ion-background-color-rgb: 18, 18, 18;
 
-    --ion-text-color: #ffffff;
-    --ion-text-color-rgb: 255, 255, 255;
+    --ion-text-color: var(--x-text);
 
     --ion-border-color: #222222;
 

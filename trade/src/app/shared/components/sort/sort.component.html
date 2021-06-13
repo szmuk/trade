@@ -1,0 +1,6 @@
+<div class="sort" (click)="openOptions($event)">
+  <div>Sort by:</div>
+  <div *ngIf="value" class="sort__result">{{value.value}}</div>
+  <div *ngIf="!value" class="sort__result sort__result--placeholder">{{placeholder}}</div>
+  <ion-icon name="chevron-down-outline" class="sort__icon"></ion-icon>
+</div>
