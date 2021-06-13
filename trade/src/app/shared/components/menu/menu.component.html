@@ -1,14 +1,19 @@
 <div class="menu">
   <img src="assets/logo.png" class="menu__logo" />
 
-  <ion-list class="menu__list">
+  <div class="menu__list">
+    <div *ngFor="let p of appPages; let i = index" class="menu__list__item" routerDirection="root"
+      [routerLink]="[p.url]" routerLinkActive="menu__list__item--selected">
 
-    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-      <ion-item class="menu__list__item" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
-        routerLinkActive="selected">
+      <div class="menu__list__item__page">
         <ion-icon slot="start" [name]="p.icon"></ion-icon>
-        <ion-label>{{ p.title }}</ion-label>
-      </ion-item>
-    </ion-menu-toggle>
-  </ion-list>
+        <div>{{ p.title }}</div>
+      </div>
+
+      <div class="menu__list__item__notifications" *ngIf="p.notifications">
+        {{p.notifications}}
+      </div>
+
+    </div>
+  </div>
 </div>

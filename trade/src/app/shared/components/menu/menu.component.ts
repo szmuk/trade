@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class MenuComponent {
 
   public appPages = [
-    { title: 'Alerts', url: '/alerts', icon: 'pulse-outline' },
+    { title: 'Alerts', url: '/alerts', icon: 'pulse-outline', notifications: 32 },
     { title: 'Leaderboard', url: '/leaderboard', icon: 'ribbon-outline' },
     { title: 'Xhub', url: '/xhub', icon: 'school-outline' },
   ];

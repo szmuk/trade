@@ -5,16 +5,18 @@
 :root {
   // xtrade
   --x-bg-blue: #0f305f;
-  --x-bg-lightblue: #0f305f;
+  --x-bg-lightblue: #284773;
   --x-bg-gray: #e6edf4;
   --x-bg-lightgray: #f4f6fa;
 
   --x-text: #435274;
+  --x-text-lightblue: #586d8c;
   --x-text-light: #a1b1c3;
   --x-text-darkgray: #b0b7c3;
 
   --x-success: #3fc8b7;
   --x-error: #fb5a5c;
+  --x-accent: #00e9ba;
 
   /** primary **/
   --ion-text-color: var(--x-text);
