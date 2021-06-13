@@ -25,8 +25,86 @@ export class TrendingService {
       alertsCount: 15,
       bullishPercent: 64,
       bearishPercent: 36,
-      date: moment('12/02/1995').toDate()
-    }
+      date: new Date()
+    },
+    {
+      id: 2,
+      company: {
+        id: 2,
+        code: 'TSLA',
+        name: 'Tesla Inc',
+        imageUrl: 'tesla.png'
+      },
+      alertsCount: 12,
+      bullishPercent: 55,
+      bearishPercent: 45,
+      date: new Date()
+    },
+    {
+      id: 3,
+      company: {
+        id: 3,
+        code: 'SPY',
+        name: 'S&P 500 Index',
+        imageUrl: 'spy.png'
+      },
+      alertsCount: 7,
+      bullishPercent: 36,
+      bearishPercent: 64,
+      date: moment().subtract(1, 'days').toDate()
+    },
+    {
+      id: 4,
+      company: {
+        id: 4,
+        code: 'AMZN',
+        name: 'Amazon.com',
+        imageUrl: 'amazon.png'
+      },
+      alertsCount: 17,
+      bullishPercent: 55,
+      bearishPercent: 45,
+      date: moment().subtract(1, 'days').toDate()
+    },
+    {
+      id: 5,
+      company: {
+        id: 1,
+        code: 'AAPL',
+        name: 'Apple Inc',
+        imageUrl: 'apple.png'
+      },
+      alertsCount: 15,
+      bullishPercent: 55,
+      bearishPercent: 45,
+      date: moment().subtract(8, 'days').toDate()
+    },
+    {
+      id: 6,
+      company: {
+        id: 4,
+        code: 'AMZN',
+        name: 'Amazon.com',
+        imageUrl: 'amazon.png'
+      },
+      alertsCount: 17,
+      bullishPercent: 55,
+      bearishPercent: 45,
+      date: moment().subtract(8, 'days').toDate()
+    },
+    {
+      id: 7,
+      company: {
+        id: 1,
+        code: 'AAPL',
+        name: 'Apple Inc',
+        imageUrl: 'apple.png'
+      },
+      alertsCount: 15,
+      bullishPercent: 55,
+      bearishPercent: 45,
+      date: moment().subtract(15, 'days').toDate()
+    },
   ];
 
   constructor(

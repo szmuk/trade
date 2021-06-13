@@ -18,8 +18,6 @@ export class TrendingTileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.trending);
-
     if (this.trending.bullishPercent >= 50) {
       this.chartUrl = 'bullish.png';
       this.percent = this.trending.bullishPercent;
