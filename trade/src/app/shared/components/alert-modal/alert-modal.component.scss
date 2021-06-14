@@ -27,6 +27,10 @@
   border-radius: 20px;
   background: white;
   height: 100%;
+
+  @media (max-width: 991px) {
+    overflow: auto;
+  }
 }
 
 .trader {
@@ -91,6 +95,11 @@
   height: 100%;
   padding: 10px;
   border-left: 1px solid var(--x-bg-gray);
+  flex-wrap: wrap;
+
+  @media (max-width: 991px) {
+    height: unset;
+  }
 
   &__details {
     display: flex;
@@ -174,6 +183,11 @@
   height: 100%;
   &__scroll {
     overflow: auto;
+
+    @media (max-width: 991px) {
+      overflow: initial;
+    }
+
     padding-right: 20px;
     padding-bottom: 80px;
     display: flex;
@@ -204,6 +218,11 @@
 
   &__comments {
     margin-top: 40px;
+  }
+
+  &__comment-mobile {
+    margin-top: 40px;
+    padding-bottom: 40px;
   }
 }
 

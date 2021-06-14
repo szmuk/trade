@@ -125,6 +125,10 @@
             <div class="alert-details__comments">
               <app-comments-list [comments]="alert.comments"></app-comments-list>
             </div>
+
+            <div class="alert-details__comment-mobile hidden-md-up">
+              <app-comment></app-comment>
+            </div>
           </div>
 
         </div>
@@ -132,7 +136,7 @@
     </ion-row>
   </ion-grid>
 
-  <div class="comment">
+  <div class="comment hidden-md-down">
     <ion-grid class="comment__grid-el">
       <ion-row class="comment__grid-el">
         <ion-col size="12" size-md="6" size-lg="4" class="ion-no-padding">

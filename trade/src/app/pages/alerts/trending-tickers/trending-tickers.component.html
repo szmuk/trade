@@ -2,8 +2,8 @@
   <div class="trending__header">
     <div class="trending__header__title">Trending tickers</div>
 
-    <app-sort-filter [label]="'Filter by:'" [options]="sortOptions" [(value)]="selectedSortOption"
-      (valueChange)="sortChanged()">
+    <app-sort-filter class="trending__header__filter" [label]="'Filter by:'" [options]="sortOptions"
+      [(value)]="selectedSortOption" (valueChange)="sortChanged()">
     </app-sort-filter>
   </div>
 

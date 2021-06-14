@@ -6,6 +6,12 @@ ion-header::after {
 .header {
   padding: 0 30px;
 
+  ::ng-deep {
+    .header-background {
+      background: white;
+    }
+  }
+
   @media (max-width: 767px) {
     padding: 0 10px;
   }
@@ -72,6 +78,17 @@ ion-header::after {
       border-radius: 30px;
       margin-left: 20px;
       cursor: pointer;
+    }
+  }
+}
+ion-searchbar {
+  ::ng-deep {
+    .searchbar-input {
+      padding-right: 0;
+      padding-left: 40px;
+    }
+    .searchbar-clear-icon {
+      display: none !important;
     }
   }
 }
