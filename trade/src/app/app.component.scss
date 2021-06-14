@@ -7,3 +7,9 @@
 .split-pane {
   --side-max-width: 250px;
 }
+
+.split-pane-collapsed {
+  --side-max-width: 85px !important;
+  --side-width: 85px !important;
+  --side-min-width: 85px !important;
+}

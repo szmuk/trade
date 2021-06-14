@@ -1,5 +1,6 @@
 <div class="menu">
-  <img src="assets/logo.png" class="menu__logo" />
+  <img *ngIf="!collapsed" src="assets/logo.png" class="menu__logo" />
+  <img *ngIf="collapsed" src="assets/logo-mini-white.png" class="menu__logo-mini" />
 
   <div class="menu__list">
     <div *ngFor="let p of appPages; let i = index" class="menu__list__item" routerDirection="root"
@@ -7,13 +8,21 @@
 
       <div class="menu__list__item__page">
         <ion-icon slot="start" [name]="p.icon"></ion-icon>
-        <div>{{ p.title }}</div>
+        <div *ngIf="!collapsed">{{ p.title }}</div>
       </div>
 
-      <div class="menu__list__item__notifications" *ngIf="p.notifications">
+      <div *ngIf="p.notifications" class="menu__list__item__notifications"
+        [class.menu__list__item__notifications--collapsed]="collapsed">
         {{p.notifications}}
       </div>
 
     </div>
   </div>
+
+  <div class="collapse hidden-md-down" (click)="toggle()">
+    <ion-icon name="exit-outline" class="collapse__icon" [class.collapse__icon--collapse]="!collapsed"></ion-icon>
+    <!-- <div *ngIf="!collapsed">Collapse</div> -->
+  </div>
+
+  <div></div>
 </div>

@@ -1,10 +1,14 @@
 <ion-app>
-  <ion-split-pane contentId="main-content" class="split-pane">
+  <ion-split-pane contentId="main-content" class="split-pane" [class.split-pane-collapsed]="collapsed"
+    (ionSplitPaneVisible)="splitPaneChanged()">
+
     <ion-menu contentId="main-content" type="overlay" class="side-menu">
       <ion-content>
         <app-menu></app-menu>
       </ion-content>
     </ion-menu>
+
     <ion-router-outlet id="main-content"></ion-router-outlet>
+
   </ion-split-pane>
 </ion-app>
