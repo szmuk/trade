@@ -1,0 +1,32 @@
+.comment-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__avatar {
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &__details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &__name {
+        font-weight: 500;
+      }
+
+      &__date {
+        color: var(--x-text-darkgray);
+      }
+    }
+
+    &__text {
+    }
+  }
+}

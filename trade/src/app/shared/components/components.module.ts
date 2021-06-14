@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { AlertModalComponent } from './alert-modal/alert-modal.component';
+import { AvatarComponent } from './avatar/avatar.component';
 import { CommentComponent } from './comment/comment.component';
+import { CommentsListItemComponent } from './comments-list/comments-list-item/comments-list-item.component';
+import { CommentsListComponent } from './comments-list/comments-list.component';
 import { FilterComponent } from './filter/filter.component';
 import { HeaderOptionsComponent } from './header/header-options/header-options.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,7 +24,10 @@ import { SortFilterComponent } from './sort-filter/sort-filter.component';
     FilterComponent,
     CommentComponent,
     HeaderOptionsComponent,
+    CommentsListComponent,
     AlertModalComponent,
+    AvatarComponent,
+    CommentsListItemComponent,
   ],
   exports: [
     SortFilterComponent,
@@ -29,7 +35,10 @@ import { SortFilterComponent } from './sort-filter/sort-filter.component';
     HeaderComponent,
     CommentComponent,
     FilterComponent,
+    CommentsListComponent,
     AlertModalComponent,
+    AvatarComponent,
+    CommentsListItemComponent,
   ],
   entryComponents: [
     SortFilterListComponent,

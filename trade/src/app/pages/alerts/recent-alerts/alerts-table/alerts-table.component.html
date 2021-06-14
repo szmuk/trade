@@ -8,10 +8,11 @@
       <ion-col size="6" size-md="4" size-lg="2">
         <div class="table__person">
 
-          <div class="table__person__avatar">
+          <app-avatar [person]="alert.user" class="table__person__avatar"></app-avatar>
+          <!-- <div class="table__person__avatar">
             <img [src]="'assets/' + alert.user.imageUrl" />
             <div class="table__person__avatar__alerts">{{alert.user.alertsCount}}</div>
-          </div>
+          </div> -->
 
           <div class="table__person__info">
             <div class="table__person__info__name">

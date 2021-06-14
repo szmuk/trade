@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import * as moment from 'moment';
-import { Alert } from 'src/app/core/models/alert';
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { Alert, AlertDetailed } from 'src/app/core/models/alert';
+import { AlertsQuery } from 'src/app/core/state/alerts/alerts.query';
+import { AlertsService } from 'src/app/core/state/alerts/alerts.service';
 
 @Component({
   templateUrl: './alert-modal.component.html',
@@ -9,12 +13,25 @@ import { Alert } from 'src/app/core/models/alert';
 })
 export class AlertModalComponent implements OnInit {
 
-  alert: Alert;
+  alert: AlertDetailed;
 
-  constructor(private modalCtrl: ModalController, private navParams: NavParams) { }
+  subscription = new Subscription();
+
+  constructor(
+    private modalCtrl: ModalController,
+    private navParams: NavParams,
+    private alertsQuery: AlertsQuery,
+    private alertsService: AlertsService) { }
 
   ngOnInit() {
-    this.alert = this.navParams.data.alert;
+    const alertId = this.navParams.data.alert.id;
+
+    this.subscription.add(
+      this.alertsQuery.select(x => x.detailedAlert).pipe(filter(x => !!x)).subscribe((detailedAlert: AlertDetailed) => {
+        this.alert = detailedAlert;
+      }));
+
+    this.alertsService.getAlertDetails(alertId);
   }
 
   close() {

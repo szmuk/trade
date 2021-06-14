@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Alert } from 'src/app/core/models/alert';
 import { AlertsQuery } from 'src/app/core/state/alerts/alerts.query';
@@ -10,11 +11,12 @@ import { SortFilterComponentOption } from 'src/app/shared/components/sort-filter
   templateUrl: './recent-alerts.component.html',
   styleUrls: ['./recent-alerts.component.scss'],
 })
-export class RecentAlertsComponent implements OnInit {
+export class RecentAlertsComponent implements OnInit, OnDestroy {
 
   sortedFilteredAlertsList: Alert[];
   alertsList: Alert[];
 
+  subscription = new Subscription();
 
   selectedSortOption: SortFilterComponentOption;
 
@@ -59,13 +61,17 @@ export class RecentAlertsComponent implements OnInit {
   ngOnInit() {
     this.selectedFilterOption = this.filterOptions.find(x => x.key === 'all');
 
-    this.alertsQuery.selectAll().pipe(filter(x => !!x && x.length > 0)).subscribe(alerts => {
-      this.alertsList = alerts;
-      this.filterChanged();
-    });
+    this.subscription.add(
+      this.alertsQuery.selectAll().pipe(filter(x => !!x && x.length > 0)).subscribe(alerts => {
+        this.alertsList = alerts;
+        this.filterChanged();
+      }));
 
     this.alertsService.getAlerts();
+  }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   filterChanged() {

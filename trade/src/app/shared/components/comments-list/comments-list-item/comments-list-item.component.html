@@ -1,0 +1,18 @@
+<div class="comment-item">
+  <div class="comment-item__avatar">
+    <app-avatar class="trader__person__avatar" [person]="comment.user"></app-avatar>
+  </div>
+  <div class="comment-item__content">
+    <div class="comment-item__content__details">
+      <div class="comment-item__content__details__name">
+        {{comment.user.name}}
+      </div>
+      <div class="comment-item__content__details__date">
+        {{comment.date}}
+      </div>
+    </div>
+    <div class="comment-item__content__text">
+      {{comment.text}}
+    </div>
+  </div>
+</div>

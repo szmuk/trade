@@ -1,5 +1,6 @@
 import { Company } from './company';
 import { Person } from './person';
+import { Comment } from './comment';
 
 export class Alert {
   id: number;
@@ -18,4 +19,11 @@ export class Alert {
   top: boolean;
   price: number;
   currency: string;
+}
+
+export class AlertDetailed extends Alert {
+  descriptionTitle: string;
+  descriptionHtml: string;
+  graphUrl: string;
+  comments: Comment[];
 }

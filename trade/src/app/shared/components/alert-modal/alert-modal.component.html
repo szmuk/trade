@@ -16,10 +16,7 @@
         <div class="trader">
 
           <div class="trader__person">
-            <div class="trader__person__avatar">
-              <img [src]="'assets/' + alert.user.imageUrl" />
-              <div class="trader__person__avatar__alerts">{{alert.user.alertsCount}}</div>
-            </div>
+            <app-avatar class="trader__person__avatar" [person]="alert.user"></app-avatar>
 
             <div class="trader__person__info">
               <div class="trader__person__info__name">
@@ -117,26 +114,17 @@
             <div class="alert-details__description">
               <div class="alert-details__description__title">
                 SPY entry at old support
+                {{alert.descriptionTitle}}
               </div>
-              <div class="alert-details__description__text">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley <br><br> of
-                type
-                and
-                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release
-                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum.
+              <div class="alert-details__description__text" [innerHTML]="alert.descriptionHtml">
               </div>
 
               <div class="alert-details__graph">
-                <img src="assets/graph-big.png" />
+                <img [src]="'assets/' + alert.graphUrl" />
               </div>
-              <div class="alert-details__graph">
-                <img src="assets/graph-big.png" />
-              </div>
+            </div>
+            <div class="alert-details__comments">
+              <app-comments-list [comments]="alert.comments"></app-comments-list>
             </div>
           </div>
 

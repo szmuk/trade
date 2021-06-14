@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
+import { cloneDeep } from 'lodash';
+import * as moment from 'moment';
 import { of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Alert } from '../../models/alert';
 import { AlertsQuery } from './alerts.query';
 import { AlertsStore } from './alerts.store';
-import * as moment from 'moment';
-import { cloneDeep } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -184,6 +184,69 @@ export class AlertsService {
     const entity = cloneDeep(this.alertsQuery.getEntity(alert.id));
     entity.liked = !entity.liked;
     this.alertsStore.update(entity.id, entity);
+  }
+
+  getAlertDetails(alertId: number) {
+    const entity = cloneDeep(this.alertsQuery.getEntity(alertId));
+    entity.descriptionTitle = 'SPY entry at old support';
+    entity.descriptionHtml = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley <br><br> of
+    type
+    and
+    scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+    into
+    electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+    release
+    of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+    like Aldus PageMaker including versions of Lorem Ipsum.
+  </div>`;
+    entity.graphUrl = 'graph-big.png';
+    entity.comments = [
+      {
+
+        id: '1',
+        text: 'This is a very good alert',
+        date: moment().subtract(1, 'days').toDate(),
+        user: {
+          id: 1,
+          name: 'CKadera',
+          login: 'ckadera',
+          imageUrl: 'p1.jpg',
+          alertsCount: 88,
+          following: true
+        }
+      },
+      {
+        id: '2',
+        // eslint-disable-next-line max-len
+        text: 'Thtaining Lorem Ipsum passages, and more recently with de. scrambled it to make a type specimen book. It has survived not only five centuries.',
+        date: moment().subtract(2, 'days').toDate(),
+        user: {
+          id: 2,
+          name: 'Adam',
+          login: 'szmuk',
+          imageUrl: 'p2.jpg',
+          alertsCount: 38,
+          following: false
+        },
+      },
+      {
+        id: '3',
+        // eslint-disable-next-line max-len
+        text: 'It has survived not only five centuries.',
+        date: moment().subtract(2, 'hours').toDate(),
+        user: {
+          id: 2,
+          name: 'Adam',
+          login: 'szmuk',
+          imageUrl: 'p2.jpg',
+          alertsCount: 38,
+          following: false
+        },
+      }
+    ];
+
+    this.alertsStore.update({ detailedAlert: entity });
   }
 }
 
