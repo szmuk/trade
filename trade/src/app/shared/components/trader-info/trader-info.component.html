@@ -50,7 +50,7 @@
     <div class="trader-info__alerts">
       <div class="trader-info__alerts__alert" *ngFor="let alert of trader?.alerts">
 
-        <img class="trader-info__alerts__alert__image" [src]="'assets/' + alert.company.imageUrl" />
+        <app-company-logo [company]="alert.company"></app-company-logo>
 
         <div class="trader-info__alerts__alert__details">
 

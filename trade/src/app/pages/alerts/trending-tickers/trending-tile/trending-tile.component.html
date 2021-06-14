@@ -2,9 +2,9 @@
   <!-- HEADER -->
   <div class="tile__header">
     <div class="tile__header__data">
-      <div class="tile__header__data__image">
-        <img [src]="'assets/' + trending.company.imageUrl" />
-      </div>
+
+      <app-company-logo [company]="trending.company"></app-company-logo>
+
       <div class="tile__header__data__info">
         <div class="tile__header__data__info__code">{{trending.company.code}}</div>
         <div class="tile__header__data__info__name">{{trending.company.name}}</div>

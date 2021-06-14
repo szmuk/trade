@@ -33,6 +33,11 @@ ion-header::after {
     flex-grow: 0;
     font-size: 25px;
     font-weight: 500;
+    min-width: 150px;
+
+    @media (max-width: 1250px) {
+      min-width: unset;
+    }
   }
 
   &__search {

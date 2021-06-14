@@ -8,11 +8,7 @@
       <ion-col size="6" size-md="4" size-lg="2">
         <div class="table__person">
 
-          <app-avatar [person]="alert.user" class="table__person__avatar"></app-avatar>
-          <!-- <div class="table__person__avatar">
-            <img [src]="'assets/' + alert.user.imageUrl" />
-            <div class="table__person__avatar__alerts">{{alert.user.alertsCount}}</div>
-          </div> -->
+          <app-avatar [person]="alert.user"></app-avatar>
 
           <div class="table__person__info">
             <div class="table__person__info__name">
@@ -29,9 +25,7 @@
       <ion-col size="6" size-md="4" size-lg="3">
         <div class="table__action">
 
-          <div class="table__action__company">
-            <img [src]="'assets/' + alert.company.imageUrl" />
-          </div>
+          <app-company-logo [company]="alert.company"></app-company-logo>
 
           <div class="table__action__info">
             <div class="table__action__info__action">

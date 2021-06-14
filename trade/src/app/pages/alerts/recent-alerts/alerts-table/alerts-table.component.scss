@@ -40,10 +40,6 @@
         color: var(--x-text-light);
       }
     }
-    &__avatar {
-      flex-grow: 0;
-      flex-shrink: 0;
-    }
   }
 
   // ACTION
@@ -52,16 +48,6 @@
     flex-direction: row;
     align-items: center;
     height: 100%;
-
-    &__company {
-      flex-grow: 0;
-      flex-shrink: 0;
-      height: 50px;
-      width: 50px;
-      padding: 5px;
-      border-radius: 5px;
-      background-color: var(--x-bg-lightgray);
-    }
 
     &__info {
       flex-grow: 1;

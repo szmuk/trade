@@ -1,6 +1,9 @@
-.avatar {
+:host {
   flex-grow: 0;
   flex-shrink: 0;
+}
+
+.avatar {
   padding: 5px;
   position: relative;
 

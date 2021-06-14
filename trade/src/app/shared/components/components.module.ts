@@ -8,6 +8,7 @@ import { AvatarComponent } from './avatar/avatar.component';
 import { CommentComponent } from './comment/comment.component';
 import { CommentsListItemComponent } from './comments-list/comments-list-item/comments-list-item.component';
 import { CommentsListComponent } from './comments-list/comments-list.component';
+import { CompanyLogoComponent } from './company-logo/company-logo.component';
 import { FilterComponent } from './filter/filter.component';
 import { HeaderOptionsComponent } from './header/header-options/header-options.component';
 import { HeaderComponent } from './header/header.component';
@@ -27,6 +28,7 @@ import { TraderInfoComponent } from './trader-info/trader-info.component';
     HeaderOptionsComponent,
     CommentsListComponent,
     TraderInfoComponent,
+    CompanyLogoComponent,
     AlertModalComponent,
     AvatarComponent,
     CommentsListItemComponent,
@@ -35,6 +37,7 @@ import { TraderInfoComponent } from './trader-info/trader-info.component';
     SortFilterComponent,
     MenuComponent,
     HeaderComponent,
+    CompanyLogoComponent,
     CommentComponent,
     FilterComponent,
     CommentsListComponent,

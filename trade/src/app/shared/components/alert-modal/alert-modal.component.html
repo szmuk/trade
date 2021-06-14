@@ -42,9 +42,7 @@
         <div class="alert">
           <div class="alert__details">
 
-            <div class="alert__details__company">
-              <img [src]="'assets/' + alert.company.imageUrl" />
-            </div>
+            <app-company-logo [company]="alert.company"></app-company-logo>
 
             <div class="alert__details__info">
               <div class="alert__details__info__action">
