@@ -32,11 +32,13 @@ export class AlertsTableComponent implements OnInit {
     }
   }
 
-  like(alert: Alert) {
+  like(event, alert: Alert) {
+    event.preventDefault();
     this.alertsService.like(alert);
   }
 
-  save(alert: Alert) {
+  save(event, alert: Alert) {
+    event.preventDefault();
     this.alertsService.save(alert);
   }
 

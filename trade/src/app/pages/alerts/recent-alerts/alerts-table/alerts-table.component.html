@@ -5,7 +5,7 @@
       (click)="openAlert(alert)">
 
       <!-- AVATAR, NAME -->
-      <ion-col size="12" size-md="6" size-lg="2">
+      <ion-col size="12" size-md="12" size-lg="2">
         <div class="table__person">
 
           <app-avatar [person]="alert.user"></app-avatar>
@@ -22,7 +22,7 @@
       </ion-col>
 
       <!-- COMPANY, ACTION -->
-      <ion-col size="12" size-md="6" size-lg="3">
+      <ion-col size="12" size-md="12" size-lg="3">
         <div class="table__action">
 
           <app-company-logo [company]="alert.company"></app-company-logo>
@@ -39,7 +39,7 @@
       </ion-col>
 
       <!-- DATE -->
-      <ion-col size="12" size-md="4" size-lg="2">
+      <ion-col size="6" size-md="3" size-lg="2">
         <div class="table__date">
           <div class="table__date__container">
             <div class="table__date__closed" *ngIf="alert.closed">
@@ -53,7 +53,7 @@
       </ion-col>
 
       <!-- TYPE -->
-      <ion-col size="6" size-md="4" size-lg="1">
+      <ion-col size="6" size-md="3" size-lg="1">
         <div class="table__type">
           <div class="table__type__text">
             {{alert.type}}
@@ -62,9 +62,9 @@
       </ion-col>
 
       <!-- RESULT -->
-      <ion-col size="6" size-md="4" size-lg="2">
+      <ion-col size="6" size-md="3" size-lg="2">
         <div class="table__result">
-          <div class="table__result__container">
+          <div>
             <div class="table__result__container table__result__container--made"
               *ngIf="alert.closed && alert.gainLoss > 0">
               Made {{alert.gainLoss}}%
@@ -89,21 +89,21 @@
       </ion-col>
 
       <!-- ACTIONS -->
-      <ion-col size="12" size-md="12" size-lg="2">
+      <ion-col size="6" size-md="3" size-lg="2">
         <div class="table__actions">
-          <div class="table__actions__action" [class.table__actions__action--toggled]="alert.liked"
-            (click)="like(alert)">
-            <ion-icon name="thumbs-up"></ion-icon>
-            <div>{{alert.likesCount}}</div>
-          </div>
-          <div class="table__actions__action" [class.table__actions__action--toggled]="alert.saved"
-            (click)="save(alert)">
-            <ion-icon name="bookmark"></ion-icon>
-            <div>{{alert.savedCount}}</div>
-          </div>
           <div class="table__actions__action" [class.table__actions__action--toggled]="alert.commented">
             <ion-icon name="chatbox"></ion-icon>
             <div>{{alert.commentsCount}}</div>
+          </div>
+          <div class="table__actions__action" [class.table__actions__action--toggled]="alert.saved"
+            (click)="save($event, alert)">
+            <ion-icon name="bookmark"></ion-icon>
+            <div>{{alert.savedCount}}</div>
+          </div>
+          <div class="table__actions__action" [class.table__actions__action--toggled]="alert.liked"
+            (click)="like($event, alert)">
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{alert.likesCount}}</div>
           </div>
         </div>
       </ion-col>
