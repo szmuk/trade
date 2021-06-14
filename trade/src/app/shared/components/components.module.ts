@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { AlertModalComponent } from './alert-modal/alert-modal.component';
+import { CommentComponent } from './comment/comment.component';
 import { FilterComponent } from './filter/filter.component';
 import { HeaderOptionsComponent } from './header/header-options/header-options.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,6 +19,7 @@ import { SortFilterComponent } from './sort-filter/sort-filter.component';
     HeaderComponent,
     SortFilterListComponent,
     FilterComponent,
+    CommentComponent,
     HeaderOptionsComponent,
     AlertModalComponent,
   ],
@@ -25,6 +27,7 @@ import { SortFilterComponent } from './sort-filter/sort-filter.component';
     SortFilterComponent,
     MenuComponent,
     HeaderComponent,
+    CommentComponent,
     FilterComponent,
     AlertModalComponent,
   ],

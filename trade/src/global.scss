@@ -37,12 +37,15 @@ ion-button {
   --padding-end: 30px;
 }
 
+.modal-very-big .modal-wrapper {
+  --background: transparent;
+  --box-shadow: none;
+}
+
 @media (min-width: 767px) {
   .modal-very-big .modal-wrapper {
-    width: 1500px;
+    width: 1400px;
     height: 90%;
-    --background: transparent;
-    --box-shadow: none;
   }
 }
 

@@ -201,9 +201,20 @@
 }
 
 .alert-details {
-  display: flex;
-  flex-direction: column;
-  padding: 30px 20px;
+  height: 100%;
+  &__scroll {
+    overflow: auto;
+    padding-right: 20px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0px 140px 20px;
+    height: 70vh;
+
+    @media (max-width: 991px) {
+      height: 66vh;
+    }
+  }
 
   &__description {
     &__title {
@@ -218,5 +229,22 @@
     border-radius: 15px;
     margin-top: 20px;
     padding: 5px;
+  }
+}
+
+.comment {
+  position: absolute;
+  height: 145px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+
+  &__grid-el {
+    height: 100%;
+  }
+
+  &__container {
+    height: 100%;
+    padding: 0 20px 20px 20px;
   }
 }
