@@ -17,7 +17,11 @@ const routes: Routes = [
   },
   {
     path: 'xhub',
-    loadChildren: () => import('./pages/xhub/xhub.module').then( m => m.XhubPageModule)
+    loadChildren: () => import('./pages/xhub/xhub.module').then(m => m.XhubPageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'alerts'
   }
 ];
 
