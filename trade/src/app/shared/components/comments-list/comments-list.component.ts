@@ -15,8 +15,6 @@ export class CommentsListComponent implements OnInit {
   yesterday: Comment[];
   older: Comment[];
 
-  constructor() { }
-
   ngOnInit() {
     const sorted = this.comments.sort((a, b) => a.date < b.date ? 1 : -1);
 
@@ -27,11 +25,6 @@ export class CommentsListComponent implements OnInit {
     left = left.filter(x => !this.yesterday.includes(x));
 
     this.older = left.filter(x => !this.yesterday.includes(x));
-
-    console.log(this.today);
-    console.log(this.yesterday);
-    console.log(this.older);
-
   }
 
 }

@@ -233,7 +233,7 @@ export class AlertsService {
       {
         id: '3',
         // eslint-disable-next-line max-len
-        text: 'It has survived not only five centuries.',
+        text: 'It has survived not only five centuries. Scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.',
         date: moment().subtract(2, 'hours').toDate(),
         user: {
           id: 2,
@@ -242,7 +242,20 @@ export class AlertsService {
           imageUrl: 'p2.jpg',
           alertsCount: 38,
           following: false
-        },
+        }
+      },
+      {
+        id: '4',
+        text: 'It has survived not only five centuries.',
+        date: moment().subtract(22, 'days').toDate(),
+        user: {
+          id: 1,
+          name: 'CKadera',
+          login: 'ckadera',
+          imageUrl: 'p1.jpg',
+          alertsCount: 88,
+          following: true
+        }
       }
     ];
 
