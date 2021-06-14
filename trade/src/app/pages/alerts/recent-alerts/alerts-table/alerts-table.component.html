@@ -91,7 +91,8 @@
       <!-- ACTIONS -->
       <ion-col size="6" size-md="3" size-lg="2">
         <div class="table__actions">
-          <div class="table__actions__action" [class.table__actions__action--toggled]="alert.commented">
+          <div class="table__actions__action" [class.table__actions__action--toggled]="alert.commented"
+            (click)="comment($event, alert)">
             <ion-icon name="chatbox"></ion-icon>
             <div>{{alert.commentsCount}}</div>
           </div>

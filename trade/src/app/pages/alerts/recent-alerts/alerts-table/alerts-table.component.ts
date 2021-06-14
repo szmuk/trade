@@ -41,6 +41,9 @@ export class AlertsTableComponent implements OnInit {
     event.preventDefault();
     this.alertsService.save(alert);
   }
+  comment(event, alert: Alert) {
+    event.preventDefault();
+  }
 
   async openAlert(alert: Alert) {
 
