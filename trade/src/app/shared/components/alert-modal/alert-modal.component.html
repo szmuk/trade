@@ -107,6 +107,7 @@
     <!-- content -->
     <ion-row>
       <ion-col size="12" size-md="6" size-lg="4" class="ion-no-padding">
+        <app-trader-info [traderId]="alert.user.id"></app-trader-info>
       </ion-col>
       <ion-col size="12" size-md="6" size-lg="8" class="ion-no-padding">
         <div class="alert-details">
@@ -142,7 +143,6 @@
           <div class="comment__container">
             <app-comment></app-comment>
           </div>
-
         </ion-col>
       </ion-row>
     </ion-grid>

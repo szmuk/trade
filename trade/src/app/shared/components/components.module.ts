@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { SortFilterListComponent } from './sort-filter/sort-filter-list/sort-filter-list.component';
 import { SortFilterComponent } from './sort-filter/sort-filter.component';
+import { TraderInfoComponent } from './trader-info/trader-info.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SortFilterComponent } from './sort-filter/sort-filter.component';
     CommentComponent,
     HeaderOptionsComponent,
     CommentsListComponent,
+    TraderInfoComponent,
     AlertModalComponent,
     AvatarComponent,
     CommentsListItemComponent,
@@ -36,6 +38,7 @@ import { SortFilterComponent } from './sort-filter/sort-filter.component';
     CommentComponent,
     FilterComponent,
     CommentsListComponent,
+    TraderInfoComponent,
     AlertModalComponent,
     AvatarComponent,
     CommentsListItemComponent,
