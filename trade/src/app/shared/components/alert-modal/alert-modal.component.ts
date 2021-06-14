@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import * as moment from 'moment';
 import { Subscription } from 'rxjs';
@@ -11,7 +11,7 @@ import { AlertsService } from 'src/app/core/state/alerts/alerts.service';
   templateUrl: './alert-modal.component.html',
   styleUrls: ['./alert-modal.component.scss'],
 })
-export class AlertModalComponent implements OnInit {
+export class AlertModalComponent implements OnInit, OnDestroy {
 
   alert: AlertDetailed;
 
@@ -32,6 +32,10 @@ export class AlertModalComponent implements OnInit {
       }));
 
     this.alertsService.getAlertDetails(alertId);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   close() {

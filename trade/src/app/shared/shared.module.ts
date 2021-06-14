@@ -10,18 +10,18 @@ import { MenuComponent } from './components/menu/menu.component';
 @NgModule({
   declarations: [
   ],
+  imports: [
+    ComponentsModule,
+    IonicModule,
+    CommonModule,
+    RouterModule,
+  ],
   exports: [
     ComponentsModule,
     MenuComponent,
     HeaderComponent,
     CommonModule,
     IonicModule,
-    RouterModule,
-  ],
-  imports: [
-    ComponentsModule,
-    IonicModule,
-    CommonModule,
     RouterModule,
   ]
 })

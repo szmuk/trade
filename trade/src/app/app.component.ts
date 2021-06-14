@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppQuery } from './core/state/app/app.query';
 import { AppService } from './core/state/app/app.service';
@@ -7,7 +7,7 @@ import { AppService } from './core/state/app/app.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
   subscription = new Subscription();
 
@@ -22,6 +22,10 @@ export class AppComponent implements OnInit {
         this.collapsed = collapsed;
       })
     );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   splitPaneChanged() {

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Trending } from 'src/app/core/models/trending';
 import { TrendingQuery } from 'src/app/core/state/trending/trending.query';
@@ -11,7 +12,9 @@ import { SortFilterComponentOption } from 'src/app/shared/components/sort-filter
   templateUrl: './trending-tickers.component.html',
   styleUrls: ['./trending-tickers.component.scss'],
 })
-export class TrendingTickersComponent implements OnInit {
+export class TrendingTickersComponent implements OnInit, OnDestroy {
+
+  subscription = new Subscription();
 
   trendingList: Trending[];
   filteredTrendingList: Trending[];
@@ -38,12 +41,18 @@ export class TrendingTickersComponent implements OnInit {
   ngOnInit() {
     this.selectedSortOption = this.sortOptions.find(x => x.key === 'month');
 
-    this.trendingQuery.selectAll().pipe(filter(x => !!x)).subscribe(trending => {
-      this.trendingList = trending;
-      this.sortChanged();
-    });
+    this.subscription.add(
+      this.trendingQuery.selectAll().pipe(filter(x => !!x)).subscribe(trending => {
+        this.trendingList = trending;
+        this.sortChanged();
+      })
+    );
 
     this.trendingService.getTrending();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   sortChanged() {
