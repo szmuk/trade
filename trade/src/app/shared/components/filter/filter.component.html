@@ -1,8 +1,0 @@
-<div class="filter">
-  <div *ngFor="let option of options" class="filter__option" (click)="filterSelected(option)">
-    <div class="filter__option__inside" [class.filter__option__inside--selected]="option.key === value?.key">
-      {{option.value}}
-    </div>
-  </div>
-
-</div>

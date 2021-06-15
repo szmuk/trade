@@ -60,21 +60,30 @@
           color: var(--x-accent);
         }
       }
+      &:hover {
+        color: var(--x-text-darkgray);
+      }
     }
   }
 }
 
 .collapse {
-  display: flex;
-  flex-direction: row-reverse;
-  color: var(--x-bg-gray);
-  margin-top: 100px;
-  align-items: center;
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
   cursor: pointer;
+  color: white;
+
+  &--collapse {
+    left: 210px;
+  }
 
   &__icon {
-    padding: 15px 30px 15px 15px;
     font-size: 25px;
+
+    &:hover {
+      color: var(--x-text-darkgray);
+    }
 
     &--collapse {
       transform: rotateY(180deg);

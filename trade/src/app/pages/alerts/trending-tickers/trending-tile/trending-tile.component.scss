@@ -40,6 +40,11 @@
     &__icon {
       color: var(--x-text-darkgray);
       font-size: 25px;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--x-action);
+      }
     }
   }
 

@@ -18,11 +18,8 @@
 
     </div>
   </div>
+</div>
 
-  <div class="collapse hidden-md-down" (click)="toggle()">
-    <ion-icon name="exit-outline" class="collapse__icon" [class.collapse__icon--collapse]="!collapsed"></ion-icon>
-    <!-- <div *ngIf="!collapsed">Collapse</div> -->
-  </div>
-
-  <div></div>
+<div class="collapse hidden-md-down" [class.collapse--collapse]="!collapsed" (click)="toggle()">
+  <ion-icon name="exit-outline" class="collapse__icon" [class.collapse__icon--collapse]="!collapsed"></ion-icon>
 </div>

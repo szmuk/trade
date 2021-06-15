@@ -8,6 +8,10 @@
   flex-direction: row;
   align-items: center;
 
+  &:hover .dropdown__icon {
+    color: var(--x-action);
+  }
+
   &__result {
     color: var(--x-text-light);
     margin-left: 5px;
@@ -37,6 +41,7 @@
       min-width: 100px;
       text-align: center;
       cursor: pointer;
+      border: 1px solid var(--x-bg-lightgray);
       border-right: 1px solid var(--x-bg-gray);
       font-size: 14px;
 
@@ -46,7 +51,10 @@
 
       &:last-child {
         border-radius: 0 10px 10px 0;
-        border: 0;
+      }
+
+      &:hover {
+        border: 1px solid var(--x-bg-gray);
       }
 
       &__inside {
